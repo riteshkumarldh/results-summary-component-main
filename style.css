@@ -1,0 +1,239 @@
+/* 
+    # google font - Hanken Grotesk
+*/
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap');
+
+
+/* 
+    # custom properties
+=============================*/
+:root {
+
+    /* Primary colors */
+    --Light-red: hsl(0, 100%, 67%);
+    --Orangey-yellow: hsl(39, 100%, 56%);
+    --Green-teal: hsl(166, 100%, 37%);
+    --Cobalt-blue: hsl(234, 85%, 45%);
+
+    /* Gradients */
+    --Light-slate-blue: hsl(252, 100%, 67%);
+    --Light-royal-blue: hsl(241, 81%, 54%);
+    --Violet-blue-circle: hsla(256, 72%, 46%, 1);
+    --Persian-blue-circle: hsla(241, 72%, 46%, 0);
+
+    /* Neutral */
+    --White: hsl(0, 0%, 100%);
+    --Pale-blue: hsl(221, 100%, 96%);
+    --Light-lavender: hsl(241, 100%, 89%);
+    --Darkgrayblue: hsl(224, 30%, 27%);
+
+    /* Typography */
+    --font-family: 'Hanken Grotesk', sans-serif;
+
+    --fs-p: 18px;
+}
+
+/* 
+    # Reset
+=========================*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li { list-style-type: none; }
+
+body {
+    font-family: var(--font-family);
+    background-color: hsla(0, 11%, 89%, 0.8);
+    min-height: 100vh;
+    font-size: var(--fs-p);
+}
+
+
+/* 
+    # main-wrapper
+===================*/
+
+.wrapper {
+    display: grid;
+}
+
+
+/* 
+    # Result
+====================*/
+.result {
+    background-image: linear-gradient(var(--Light-slate-blue) , var(--Light-royal-blue));
+    color: #fff;
+    padding: 30px 40px;
+    border-radius: 0 0 30px 30px;
+    text-align: center;
+}
+
+.result > h4 { color: hsla(0, 0%, 100%, 0.7); }
+
+.result .circle {
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-inline: auto;
+    background-image: linear-gradient(var(--Persian-blue-circle), var(--Violet-blue-circle));
+    margin-block: 15px;
+}
+
+.circle > h1 { font-size: 48px; }
+
+.circle > p {
+    font-size: 16px;
+    color: hsla(0, 0%, 100%, 0.4);
+}
+
+.result .result-text {
+    font-size: 16px;
+    color: hsla(0, 0%, 100%, 0.5);
+    margin-block-start: 15px;
+}
+
+
+/* 
+    # summary
+=====================*/
+
+.summary {
+    padding: 30px;
+    background-color: #fff;
+}
+
+.summary > h2 { 
+    font-size: 20px;
+    margin-block-end: 20px;
+}
+
+.summary .parts {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.part:nth-child(1) {
+    background-color: hsla(0, 100%, 67%, 0.1);
+}
+.part:nth-child(2) {
+    background-color: hsla(39, 100%, 56%, 0.1);
+}
+.part:nth-child(3) {
+    background-color: hsla(166, 100%, 37%, 0.1);
+}
+.part:nth-child(4) {
+    background-color: hsla(234, 85%, 45%, 0.1);
+}
+
+
+.parts .part {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.part-left , .part-right { display: flex; }
+
+.part-left > span {
+    margin-inline-start: 20px;
+}
+
+.part-left .red {
+    color: var(--Light-red);
+}
+.part-left .yellow {
+    color: var(--Orangey-yellow);
+}
+.part-left .green {
+    color: var(--Green-teal);
+}
+.part-left .blue {
+    color: var(--Cobalt-blue);
+}
+
+
+.part-left > img {
+    width: 30px;
+    pointer-events: none;
+}
+
+.bold { font-weight: bold; }
+
+.part-right > span { margin-inline-end: 8px; }
+
+.part-right > p { color: hsla(0, 0%, 50%, 0.8); }
+
+/* 
+    # button
+==================*/
+
+.btn {
+    margin-block-start: 25px;
+    display: inline-block;
+    background-color: var(--Darkgrayblue);
+    width: 100%;
+    padding: 15px 0;
+    color: var(--White);
+    font-size: 20px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s ease all;
+}
+
+.btn:is(:hover, :focus-visible) {
+    background-image: linear-gradient(var(--Light-royal-blue) , var(--Light-slate-blue));
+}
+
+/* 
+    # responsive for larger screen
+=============================================*/
+
+@media screen and (min-width: 800px) {
+
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .wrapper {
+        margin-inline: auto;
+        max-width: 700px;
+        grid-template-columns: 1fr 1fr;
+        box-shadow: 0 1px 10px hsla(0, 0%, 100%, 0.7);
+        background-color: white;
+        border-radius: 30px;
+        overflow: hidden;
+        
+    }
+
+    .result {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-radius: 30px;
+        padding: 50px 70px;
+    }
+
+    .result .circle {
+        width: 200px;
+        height: 200px;
+    }
+
+    .parts .part {
+        padding-block: 15px;
+    }
+    
+}
